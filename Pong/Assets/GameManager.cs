@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int maxScore;
 
     private bool isDebugWindowShown = false;
+    public Trajectory trajectory;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
         if (GUI.Button(new Rect(Screen.width / 2 - 60, Screen.height - 73, 120, 53), "TOGGLE\nDEBUG INFO"))
         {
             isDebugWindowShown = !isDebugWindowShown;
+            trajectory.enabled = !trajectory.enabled;
         }
     }
 

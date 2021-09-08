@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     public float xInitialForce;
     public float yInitialForce;
     private Vector2 trajectoryOrigin;
+    public float constSpeed = 10f;
 
     public Vector2 TrajectoryOrigin
     {
@@ -45,11 +46,16 @@ public class BallControl : MonoBehaviour
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         RestartGame();
+        trajectoryOrigin = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+  
+    private void FixedUpdate()
     {
-        
+        if(rigidBody2D.velocity.magnitude != constSpeed)
+        {
+
+            rigidBody2D.velocity = rigidBody2D.velocity.normalized * constSpeed;
+        }
     }
 }
