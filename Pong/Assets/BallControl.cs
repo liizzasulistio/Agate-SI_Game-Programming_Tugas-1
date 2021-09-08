@@ -7,6 +7,12 @@ public class BallControl : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     public float xInitialForce;
     public float yInitialForce;
+    private Vector2 trajectoryOrigin;
+
+    public Vector2 TrajectoryOrigin
+    {
+        get { return trajectoryOrigin; }
+    }
 
     void ResetBall()
     {

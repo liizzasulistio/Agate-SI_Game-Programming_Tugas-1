@@ -11,7 +11,12 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     private int score;
 
-    
+    private ContactPoint2D contactPoint2D;
+    public ContactPoint2D LastContactPoint
+    {
+        get { return contactPoint2D; }
+    }
+
 
     // Start is called before the first frame update
     void Start()
