@@ -5,7 +5,8 @@ using UnityEngine;
 public class SideWall : MonoBehaviour
 {
     public PlayerControl player;
-    [SerializeField] private GameManager gameManager;
+    [SerializeField]
+    private GameManager gameManager;
 
     void OnTriggerEnter2D(Collider2D anotherCollider)
     {

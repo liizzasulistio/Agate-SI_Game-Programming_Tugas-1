@@ -5,16 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PlayerControl player1;
-    public PlayerControl player2;
-
     private Rigidbody2D player1RigidBody;
+
+    public PlayerControl player2;
     private Rigidbody2D player2RigidBody;
 
     public BallControl ball;
     private Rigidbody2D ballRigidBody;
     private CircleCollider2D ballCollider;
 
-    public int maxScore;
+    public int maxScore = 5;
 
     private bool isDebugWindowShown = false;
     public Trajectory trajectory;
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
         if(player1.Score == maxScore)
         {
-            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 2000, 1000), "PLAYER ONE WINS");
+            GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 10, 2000, 1000), "PLAYER ONE WINS");
             ball.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
         }
         else if(player2.Score == maxScore)

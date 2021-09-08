@@ -1,6 +1,6 @@
 OSXUniversal
 PlayerPath?
-/Users/liizzasulistio/Documents/Agate/Agate-SI_Game-Programming_Tugas-1/Pong_Mac.app
+/Users/liizzasulistio/Documents/Agate/Agate-SI_Game-Programming_Tugas-1/MacOS/Pong.app
 SceneListBegin?
 Assets/Pong.unity
 SceneListEnd?
@@ -154,7 +154,7 @@ df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 28fa7c399a0a1ff6dcd558bbd6e4b66d Assembly-CSharp.dll:.PlayerControl
-7af8fdce79e6302b1317b5ecfb967b53 Assembly-CSharp.dll:.BallControl
+e0c8207b016ca7c0db4c768073ea3525 Assembly-CSharp.dll:.BallControl
 8820dd2af509cc3e744740af678cb713 Assembly-CSharp.dll:.SideWall
 d29a1bf80e3936837b4622eed999c6a5 Assembly-CSharp.dll:.GameManager
 70133a3c56b0e58b055105f97aebf576 Assembly-CSharp.dll:.DottedLineDemo

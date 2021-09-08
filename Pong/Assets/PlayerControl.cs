@@ -56,6 +56,14 @@ public class PlayerControl : MonoBehaviour
         transform.position = position;
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Equals("Ball"))
+        {
+            contactPoint2D = collision.GetContact(0);
+        }
+    }
+
     public void IncrementScore()
     {
         score++;
@@ -70,4 +78,6 @@ public class PlayerControl : MonoBehaviour
     {
         get { return score; }
     }
+
+    
 }
