@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public PlayerControl player1;
+    public PlayerController player1;
     private Rigidbody2D player1RigidBody;
 
-    public PlayerControl player2;
+    public PlayerController player2;
     private Rigidbody2D player2RigidBody;
 
-    public BallControl ball;
+    public BallController ball;
     private Rigidbody2D ballRigidBody;
     private CircleCollider2D ballCollider;
 
-    public int maxScore = 5;
+    public int maxScore;
 
     private bool isDebugWindowShown = false;
+
     public Trajectory trajectory;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         player1RigidBody = player1.GetComponent<Rigidbody2D>();
         player2RigidBody = player2.GetComponent<Rigidbody2D>();
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         ballCollider = ball.GetComponent<CircleCollider2D>();
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + player1.Score);
         GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + player2.Score);
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         {
             player1.ResetScore();
             player2.ResetScore();
-
             ball.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
         }
 
@@ -59,10 +58,8 @@ public class GameManager : MonoBehaviour
 
             float ballMass = ballRigidBody.mass;
             Vector2 ballVelocity = ballRigidBody.velocity;
-
             float ballSpeed = ballRigidBody.velocity.magnitude;
             Vector2 ballMomentum = ballMass * ballVelocity;
-
             float ballFriction = ballCollider.friction;
 
             float impulsePlayer1X = player1.LastContactPoint.normalImpulse;
@@ -82,15 +79,14 @@ public class GameManager : MonoBehaviour
             GUIStyle guiStyle = new GUIStyle(GUI.skin.textArea);
             guiStyle.alignment = TextAnchor.UpperCenter;
             GUI.TextArea(new Rect(Screen.width / 2 - 200, Screen.height - 200, 400, 110), debugText, guiStyle);
+
             GUI.backgroundColor = oldColor;
-
-
         }
-        if (GUI.Button(new Rect(Screen.width / 2 - 60, Screen.height - 73, 120, 53), "TOGGLE\nDEBUG INFO"))
+
+        if(GUI.Button(new Rect(Screen.width / 2 - 60, Screen.height - 73, 120, 53), "TOGGLE\nDEBUG INFO"))
         {
             isDebugWindowShown = !isDebugWindowShown;
             trajectory.enabled = !trajectory.enabled;
         }
     }
-
 }
